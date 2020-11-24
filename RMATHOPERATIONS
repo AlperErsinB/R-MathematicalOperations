@@ -1,0 +1,452 @@
+#Matematikel Islemler ve Vektorler
+##Temel matematiksel islemler
+x <- 5
+y <- 15 
+
+# cikartma islemi
+y - x 
+
+# Bolme islemi
+y / x
+
+# carpma islemi
+y * x
+
+# Y'nin karesi
+y**2
+
+# Y'nin kupu
+y**3
+
+
+# 12'nin karasi 
+z = 12**2
+z
+
+# Karekok alma islemi
+sqrt(z)
+
+t = -3*6
+t
+
+t**3
+t**2
+
+t/2
+t/3
+t/5
+
+
+
+
+##Vektorlerde matematiksel islemler
+x <- c(12,54,67,43,35)
+
+x + 5
+x - 5
+x / 5
+x * 5
+x **2
+x **3
+
+# Yeni bir vektore atama islemi 
+y <- x**2
+x
+y
+
+# iki vektor uzerinden matematik islemleri
+z <- x + 15
+z
+x
+x + z
+x * z
+x / z
+
+x1 <- c(13,24,35,56)
+x2 <- c(12,23)
+
+x1 + x2
+x1 * x2
+
+# (13 , 24 , 35 , 36)
+# (12 , 23) (12 , 23)
+
+x3 <- c(13,24,35,56)
+x4 <- c(12,23 ,24)
+
+x3 + x4 #kat iliskisi yok kod calismaz
+
+
+
+
+##Vektor Uzunluklarinin Elde Edilmesi
+x <- c(1,2,3,4,5,6,7)
+
+# Vektor uzunlugunu veren fonksiyon
+length(x)
+
+x1 <- c(11,22,33,44,55,66,67,56,5,6,5,4,34)
+length(x1)
+
+x2 <- c('A' ,'B' ,'C' ,'D',
+        'A' ,'B' ,'C' ,'D',
+        'A' ,'B' ,'C' ,'D',
+        'A' ,'B' ,'C' ,'D',
+        'A' ,'B' ,'C' ,'D',
+        'A' ,'B' ,'C' ,'D',
+        'A' ,'B' ,'C' ,'D',
+        'A' ,'B' ,'C' ,'D',
+        'A' ,'B' ,'C' ,'D',
+        'A' ,'B' ,'C' ,'D'
+)
+
+# Vektor uzunlugu
+length(x2)
+x2[40]
+
+x2[length(x2)]
+
+len <- length(x2)
+len
+
+x2[len]
+
+x2[len-1]
+
+x2[len-3]
+
+
+
+
+##Vektorlerin min max degerleri
+x <- c(12,34,23,11,4,5,78)
+
+# Minimum Deger 
+min(x)
+
+# Maximum Deger
+max(x)
+
+y <- c(-1,-10,-19 , 0 , 3,67,45)
+
+min(y)
+max(y)
+t <- c(-1,-10,-19)
+min(t)
+max(t)
+
+# Islem onceligi onemlidir
+(min(t) + max(t)) / min(t)
+min(t) + max(t) / min(t)
+
+
+
+
+##Vektorlerde Eleman Indeksi
+x <- c(12,34,56,45,78,54)
+
+x
+
+y = 5
+y == 5
+
+
+x == 5
+x == 78
+
+which(x == 34) #x'te 34 2 nolu indekstedir
+
+t <- c(5,34,23,5,6)
+
+which(t == 5)
+
+bes = which(t == 5)
+bes
+# 5 e esit olan elemanlari secer
+t[bes]
+
+t[which(t == 5)]
+
+t[t==5]
+
+t==5
+class(t==5)
+
+
+
+
+##Buyuktur Kucuktur Sorgulari
+
+5 == 5
+5 == 10
+
+x <- c(23,45,67,89,23,14,25)
+
+
+x == 45
+
+x > 23
+x >= 23
+
+x < 23
+x <= 23
+x != 23
+
+
+
+x[x == 23]
+x[x > 23]
+x
+
+buyuktur <- x[x > 23]
+buyuktur
+
+x[x < 23]
+x[ x != 23]
+x[ x <= 23]
+x[ x >= 23]
+
+
+
+
+#Buyuk kucuk esit sorgulari
+x <- c(23,34,35,37,12,1,90,145,32,14,16)
+
+
+x > 23
+x < 23
+x != 23
+
+which(x > 23)
+which(x > 60)
+which(x < 60)
+
+x[x < 60]
+x[which(x<60)]
+
+which( x >= 60)
+which( x >= 90)
+which( x > 90)
+
+f <- which(x < 24)
+f
+x[f]
+
+
+
+
+#Karakter turu veri iceren vektorlerde sorgulama
+
+'A' == 'A'
+'B' == 'A'
+
+'Bb' == 'BB'
+
+'B' != 'B'
+'B' != 'A'
+
+'B' < 'A'
+'B' > 'A'
+
+'B' >= 'A'
+'B' >= 'B'
+
+'B' <= 'B'
+'B' <= 'A'
+
+'Ad' < 'Ar'
+'Bd' < 'Ad'
+
+'BD' < 'BD'
+'Bd' < 'BD'
+'BD' < 'Bd'
+
+'d' < 'D'
+'D' > 'd'
+'D' < 'd'
+
+x <- c('A' , 'B' , 'C' , 'D' , 'A' , 'F' , 'Y')
+
+x[x > 'X']
+x[x > 'D']
+x[x >= 'D']
+
+which(x > 'D')
+which(x == 'A')
+
+x[which(x == 'A')]
+
+
+'Alper' < 'Kemal'
+'Alper' > 'Kemal'
+
+'AlpEr' < 'Kemal'
+'Kemal' < 'AlpEr'
+'Alper' < 'AlpEr'
+'AlpEr' < 'AlpEr'
+
+
+
+
+##Ardisik degerlerden olusan vektoru olusturma
+1:23
+
+-2 : 5
+
+seq(10)
+seq(1,10)
+seq(-4 , 14)
+
+x <- seq(-4 , 5)
+x
+
+seq(from = 0 , to = 10)
+
+df <- data.frame( 'A' = c(1,2,3,4,5) , 'B' = c(34,35,35,34,12))
+df
+
+df <- df[-3 , ]
+df
+
+uz <- length(df$A)
+uz
+
+row.names(df)
+
+row.names(df) <- seq(from = 1 , to = uz)
+df
+
+
+
+
+##Belirli bir deger ile artan seriler
+seq(10)
+seq(1,10)
+seq(from = 1 , to = 10)
+
+?seq
+
+seq(from=2 , to = 20 , by = 3)
+seq(from=1 , to = 20 , by = 2)
+
+y <- seq(from= 0.30 , to = 10.79 , by = 0.001 )
+l <- length(y)
+
+y[10491]
+y[l]
+
+t <- seq(from = 1 , to = 10 , length.out = 30) #length.out 30 tane eleman olsun
+length(t)
+
+
+seq(from = 1 , to = 10 , by = 20 )
+seq(from = 1 , to = 20 , by = 4 , length.out = 3) # Hatali
+seq(from = 1 , to = 20 , by = 4 , length.out = 20) # Hatali
+
+seq(from = 1 , to = 20 , by = 4 , length.out = NULL) # Hatali
+seq(from = 1 , to = 20 , by = 4 ) # Dogru kullanim
+
+
+
+
+##Vektor degerlerinin rastgele siralanmasi
+
+x <- seq(from = 100 , to = 300 , by = 10)
+x
+
+sample(x) #belirlenen bir seriyi karisik olarak getirir - sample fonksiyonu
+sample(x , replace = TRUE) #replace true = aynı degerleri kullanabilirsin
+
+
+# Sample fonksiyonu Calistirildiginda her seferinde farkli sonus verir 
+sample(x)
+sample(x)
+
+y <- sample(x)
+y
+y
+
+
+
+
+
+##Vektorlerden Rastgele Orneklem Alimi
+x <- seq(from = 10, to = 200, length.out = 50)
+
+length(x)
+
+#Rastgele Siralama
+sample(x)
+
+#Ratgele 1 Eleman Alma
+sample(x, size = 1)
+
+set.seed(165) #tohum kur anlaminda, yani sabitle, 165 ile sabitle
+sample(x, size = 1)
+
+?set.seed
+
+
+set.seed(165)
+sample(x, size = 15)
+sample(x, size = 20, replace = TRUE)
+
+
+##Tekrar Eden Degerlerden Olusan Seriler
+
+rep(4 , 14) #tekrar ettirme fonksiyonu
+
+r <- rep(4 , 14)
+r
+length(r)
+
+x <- c(34,23,45,67)
+x
+rep(x , 2) 
+
+
+rep(x , each = 2) #her biri 2 kere tekrar etsin
+
+v <- rep(x , each = 5)
+v
+length(v)
+
+sample(v)
+
+t <- sample(v)
+
+
+
+
+##Vektorleri Siralama
+x <- c(12,34,12,4,5,45,22,67,34)
+
+
+sort(x)
+sort(x , decreasing = T) #buyukten kucuge siralar
+
+
+y <- c('Alper' , 'Ersin' , 'Ahmet' , 'Kemal')
+
+y
+sort(y)
+sort(y , decreasing = T)
+
+na <- c(12,34,12,4,5,45,22,67,34 , NA, NA)
+sort(na)
+
+sort(na , decreasing = T , na.last = NA) #azalarak gitin, na degerlerini alma
+sort(na , decreasing = T , na.last = T) #na degerlerini getir
+sort(na , decreasing = T , na.last = F) #na degerlerini basa getir (na.last na degerlerini sona koyayim mi der)
+
+siralama <- sort(na , decreasing = T , na.last = T , index.return = T) #indexreturn T, indeksleri getirir asagisina
+
+sort(na , decreasing = T , na.last = T , index.return = T)
+class(siralama)
+
+siralama[['x']]
+siralama[['ix']]
+
+
+siralama[['x']]
+siralama[['ix']][1]
